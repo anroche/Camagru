@@ -1,3 +1,4 @@
-FROM php:7.0-apache
-
-COPY camagru /var/www/html/
+FROM mysql:5.7
+COPY setup.sh /mysql/setup.sh
+COPY setup.sql /mysql/setup.sql
+RUN /mysql/setup.sh

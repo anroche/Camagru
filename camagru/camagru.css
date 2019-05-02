@@ -1,16 +1,16 @@
 html { 
-    background: url(image/bg1.jpg) no-repeat center fixed; 
+    background: url(image/bg3.jpg) no-repeat center fixed; 
     background-size: cover; 
    }
 
 #logo {
-	margin-top: 30px;
     padding-left: 30px;
+    animation-direction: alternate
 }
 
 #header {
-    border-radius: 10px 10px 10px 10px;
-    background-color: rgba(0, 128, 0, 0.7);
+    border-radius: 5px;
+    background-color: rgba(155, 255, 155, 0.671);
     position: relative;
 }
 
@@ -21,4 +21,4 @@ html {
     position: fixed;
     bottom: 0;
     text-align: center;
-}
+}   

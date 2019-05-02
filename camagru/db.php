@@ -1,19 +1,17 @@
 <?php
-
 	function connect()
 	{
 		try {
             $connexion = new PDO(
-                "mysql:host=db;dbname=camagru",
+                "mysql:host=db;dbname=camagru_anroche",
                 "root",
                 "test"
             );
 			return $connexion;
 		} catch (Exception $err) {
-			die($err);
+			die('Erreur : ' . $err->getMessage());
 		}
 	}
-
 	function init()
 	{
 		$db = connect();
@@ -25,10 +23,8 @@
 										password VARCHAR(255) NOT NULL,
 										email VARCHAR(128) NOT NULL,
 										active INT NULL,
-
 										PRIMARY KEY(id)
 										)");
-
 		$db->query("CREATE TABLE `camagru_anroche`.`image` ( 
 										`id` INT NOT NULL AUTO_INCREMENT,
 										`id_user` INT NOT NULL,
@@ -37,7 +33,6 @@
 										`path` TEXT NOT NULL,
 										 PRIMARY KEY (`id`)
 										)");
-
 		$db->query("CREATE TABLE `comment` (
   										`id` int NOT NULL AUTO_INCREMENT,
  										`id_img` int NOT NULL,
@@ -48,5 +43,4 @@
 										)");
 		
 	}
-
 ?>
