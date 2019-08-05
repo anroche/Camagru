@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `users` (
                                 email VARCHAR(128) NOT NULL,
                                 active INT NULL,
                                 PRIMARY KEY(id)
-                                )
+                                );
 CREATE TABLE `camagru_anroche`.`image` (
                                 `id` INT NOT NULL AUTO_INCREMENT,
                                 `id_user` INT NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `camagru_anroche`.`image` (
                                 `appreciate` INT NULL DEFAULT NULL,
                                 `path` TEXT NOT NULL,
                                     PRIMARY KEY (`id`)
-                                )
+                                );
 CREATE TABLE `comment` (
                                 `id` int NOT NULL AUTO_INCREMENT,
                                 `id_img` int NOT NULL,
@@ -23,6 +23,6 @@ CREATE TABLE `comment` (
                                 `id_user` int NOT NULL,
                                 `cmmnt` text,
                                     PRIMARY KEY (`id`)
-                                )
+                                );
 		
 	

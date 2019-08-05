@@ -1,42 +1,47 @@
-version: '3'
+version: '3.4'
+
+x-common:
+  &common
+  networks:
+    - web
 
 services:
-
-   
-      
-
   db:
-   image: mysql:5.7
-   restart: always
-   environment:
-    MYSQL_USER: me
-    MYSQL_PASSWORD: test
-    MYSQL_ROOT_PASSWORD: test
-    MYSQL_DATABASE: data
-   ports:
-   - "3306:3306"
+    <<: *common
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_USER: me
+      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: data
+    ports:
+      - "3306:3306"
 
   phpmyadmin:
-   image: phpmyadmin/phpmyadmin
-   restart: always
-   links:
-   - db
-   depends_on:
-   - db
-   ports:
-   - "8080:80"
+    <<: *common
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_USER: me
+      MYSQL_PASSWORD: test
 
   apache:
-   image: webdevops/php-apache-dev
-   restart: always
-   volumes:
-   - .:/app
-   ports:
-   - "80:80"
-   - "443:443"
-   depends_on:
-   - db
-   links:
-   - db
+    <<: *common
+    build: ./docker/apache/
+    # image: php:7.2-apache
+    restart: always
+    volumes:
+      - ./camagru:/var/www/html
+      - ./docker/apache/php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - "80:80"
+      - "443:443"
+
+networks:
+  web:
 
 #docker-compose up

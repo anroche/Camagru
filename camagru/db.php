@@ -4,7 +4,7 @@
 		try {
             $connexion = new PDO(
                 "mysql:host=db;dbname=camagru_anroche",
-                "root",
+                "me",
                 "test"
             );
 			return $connexion;

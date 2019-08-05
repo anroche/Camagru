@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_SESSION['login'])) {
   header('Location: home.php');
 }
@@ -10,7 +9,6 @@ else
 
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>FT_CAMAGRU !</title>
 	<link rel="stylesheet" type="text/css" href="camagru.css">
@@ -39,4 +37,3 @@ else
 	<?php include "footer.php" ?>
 </body>
 </html>
-
