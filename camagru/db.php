@@ -3,8 +3,8 @@
 	{
 		try {
             $connexion = new PDO(
-                "mysql:host=db;dbname=camagru_anroche",
-                "me",
+                "mysql:host=db",
+                "root",
                 "test"
             );
 			return $connexion;
