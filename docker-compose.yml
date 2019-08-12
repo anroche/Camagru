@@ -16,7 +16,7 @@ services:
       MYSQL_USER: me
       MYSQL_PASSWORD: test
       MYSQL_ROOT_PASSWORD: test
-      MYSQL_DATABASE: data
+      MYSQL_DATABASE: camagru_42
     ports:
       - "3306:3306"
 
@@ -34,14 +34,16 @@ services:
   apache:
     <<: *common
     build: ./docker/apache/
-    # image: php:7.2-apache
     restart: always
     volumes:
       - ./camagru:/var/www/html
-      - ./docker/apache/php.ini:/usr/local/etc/php/php.ini
     ports:
       - "80:80"
       - "443:443"
+
+  maildev:
+    <<: *common
+    image: djfarrelly/maildev
 
 networks:
   web:
