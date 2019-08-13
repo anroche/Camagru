@@ -25,7 +25,7 @@ if ((isset($_POST['login']) && !empty($_POST['login'])) && (isset($_POST['passwo
 		{
 			?>
 			<script language="javascript">
-				alert("Soit tu t'es trompé d'identifiant, soit t'as pas activé ton compte !");
+				alert("Compte inactif ou mauvais identifiant");
 			</script>
 			<?php
 		}

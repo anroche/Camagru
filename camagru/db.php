@@ -23,6 +23,7 @@
 										password VARCHAR(255) NOT NULL,
 										email VARCHAR(128) NOT NULL,
 										active INT NULL,
+										key VARCHAR(32),
 										PRIMARY KEY(id)
 										)");
 		$db->query("CREATE TABLE `camagru_anroche`.`image` ( 
