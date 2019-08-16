@@ -2,7 +2,9 @@
 session_start();
 require_once('./db.php');
 include "index.php";
+
 $db = connect();
+
 if (isset($_POST['login'], $_POST['PW1'], $_POST['mail'])){	
 	try {
 		$db->query("USE camagru_anroche;");
@@ -22,7 +24,8 @@ if (isset($_POST['login'], $_POST['PW1'], $_POST['mail'])){
 			$req = $db->prepare("INSERT INTO users (login, password, email)VALUES (:login, :password, :email);");
 			$test = $req->execute(array(':login' => $_POST['login'],
 							':password' => hash('whirlpool', $_POST['PW1']),
-							':email' => $_POST['mail']));
+							':email' => $_POST['mail']),
+							':code_activation' => md5(microtime(TRUE)*100000));
 			$req->closeCursor();
 			$message = "Salut ".$_POST['login']." !\nClique sur le lien !\nhttp://localhost/activation.php?login='.urlencode($login).'&key='.urlencode($key).'";
 			mail($_POST['mail'], 'Validation du compte Camagru', $message);

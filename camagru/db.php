@@ -18,12 +18,12 @@
 		$db->query("CREATE DATABASE camagru_anroche;");
 		$db->query("USE camagru_anroche");
 		$db->query("CREATE TABLE users (
-										id INT NOT NULL AUTO_INCREMENT,
-										login VARCHAR(32) NOT NULL,
-										password VARCHAR(255) NOT NULL,
-										email VARCHAR(128) NOT NULL,
-										active INT NULL,
-										key VARCHAR(32),
+										`id` INT NOT NULL AUTO_INCREMENT,
+										`login` VARCHAR(32) NOT NULL,
+										`password` VARCHAR(255) NOT NULL,
+										`email` VARCHAR(128) NOT NULL,
+										`active` INT NULL,
+										`code_activation` VARCHAR(128),
 										PRIMARY KEY(id)
 										)");
 		$db->query("CREATE TABLE `camagru_anroche`.`image` ( 
