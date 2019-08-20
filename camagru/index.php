@@ -17,7 +17,7 @@ else
 <body>
 	<table  id="btn">
 		<form action="connexion.php" method="post">
-		<tr><td>Connexion</td></tr>
+		<tr><td>Connexion=<?php getenv("MYSQL_HOST"); ?></td></tr>
  	 	<tr><td>login</td><td><input type="text" name="login" value="login"></td></tr>
   		<tr><td>password</td><td><input type="password" name="password" value="password"></td></tr>
   		<tr><td><input type="submit" name="OK" value="OK"><td></tr>

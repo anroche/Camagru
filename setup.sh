@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
-service mysql start
-mysql < setup.sql
-service mysql stop
+service mariadb start
+mariadb < setup.sql
+service mariadb stop

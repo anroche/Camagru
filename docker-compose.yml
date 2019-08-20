@@ -7,9 +7,7 @@ x-common:
 
 services:
   db:
-    # <<: *common
-    networks:
-      - web
+    <<: *common
     image: mariadb
     restart: always
     environment:

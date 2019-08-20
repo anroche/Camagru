@@ -3,9 +3,9 @@
 	{
 		try {
             $connexion = new PDO(
-                "mysql:host=db",
+                "mysql:host=db;dbname=camagru_anroche",
                 "root",
-                "test"
+				"test"
             );
 			return $connexion;
 		} catch (Exception $err) {
@@ -15,9 +15,9 @@
 	function init()
 	{
 		$db = connect();
-		$db->query("CREATE DATABASE camagru_anroche;");
-		$db->query("USE camagru_anroche");
-		$db->query("CREATE TABLE users (
+		$db->query("CREATE DATABASE IF NOT EXISTS camagru_anroche;");
+		// $db->query("USE camagru_anroche");
+		$db->query("CREATE TABLE IF NOT EXISTS users (
 										`id` INT NOT NULL AUTO_INCREMENT,
 										`login` VARCHAR(32) NOT NULL,
 										`password` VARCHAR(255) NOT NULL,
@@ -26,7 +26,7 @@
 										`code_activation` VARCHAR(128),
 										PRIMARY KEY(id)
 										)");
-		$db->query("CREATE TABLE `camagru_anroche`.`image` ( 
+		$db->query("CREATE TABLE IF NOT EXISTS `image` ( 
 										`id` INT NOT NULL AUTO_INCREMENT,
 										`id_user` INT NOT NULL,
 										`login` VARCHAR(32) NOT NULL,
@@ -34,7 +34,7 @@
 										`path` TEXT NOT NULL,
 										 PRIMARY KEY (`id`)
 										)");
-		$db->query("CREATE TABLE `comment` (
+		$db->query("CREATE TABLE IF NOT EXISTS `comment` (
   										`id` int NOT NULL AUTO_INCREMENT,
  										`id_img` int NOT NULL,
 										`login` varchar(32) NOT NULL,
@@ -44,4 +44,5 @@
 										)");
 		
 	}
+	init()
 ?>
