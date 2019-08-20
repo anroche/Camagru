@@ -16,7 +16,7 @@ services:
       MYSQL_USER: me
       MYSQL_PASSWORD: test
       MYSQL_ROOT_PASSWORD: test
-      MYSQL_DATABASE: camagru_42
+      MYSQL_DATABASE: camagru_anroche
     ports:
       - "3306:3306"
 

@@ -21,17 +21,18 @@ if (isset($_POST['login'], $_POST['PW1'], $_POST['mail'])){
 		else { 
 			if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)){
     		
-			$req = $db->prepare("INSERT INTO users (login, password, email)VALUES (:login, :password, :email);");
+			$req = $db->prepare("INSERT INTO users (login, password, email, code_activation)VALUES (:login, :password, :email, :code_activation);");
 			$test = $req->execute(array(':login' => $_POST['login'],
 							':password' => hash('whirlpool', $_POST['PW1']),
-							':email' => $_POST['mail']),
-							':code_activation' => md5(microtime(TRUE)*100000));
+							':email' => $_POST['mail'],
+							':code_activation' => hash('whirlpool', $_POST['login'])));
+			echo $test;
 			$req->closeCursor();
-			$message = "Salut ".$_POST['login']." !\nClique sur le lien !\nhttp://localhost/activation.php?login='.urlencode($login).'&key='.urlencode($key).'";
+			$message = "Salut ".$_POST['login']." !\nClique sur le lien !\nhttp://localhost/activation.php?";
 			mail($_POST['mail'], 'Validation du compte Camagru', $message);
 			?>
 			<script language="javascript">
-				alert("Check tes mails !");
+				alert("Verifiez vos mails !");
 			</script>
 			<?php
 			}
@@ -39,7 +40,7 @@ if (isset($_POST['login'], $_POST['PW1'], $_POST['mail'])){
 			{
 				?>
 			<script language="javascript">
-				alert("mail invalide !");
+				alert("Mail invalide !");
 			</script>
 				<?php
 			}

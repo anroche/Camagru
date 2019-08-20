@@ -7,7 +7,9 @@ if($code_activation == '1') // Si le compte est déjà actif on prévient
    echo "Votre compte est déjà actif !";
 }
 else
-{
+{        echo $cle;
+         echo $code_activation;
+         echo "salut";
     if($cle == $code_activation) // On compare nos deux clés	
     {
        // Si elles correspondent on active le compte !	
