@@ -28,7 +28,7 @@ if (isset($_POST['login'], $_POST['PW1'], $_POST['mail'])){
 							':code_activation' => hash('whirlpool', $_POST['login'])));
 			echo $test;
 			$req->closeCursor();
-			$message = "Salut ".$_POST['login']." !\nClique sur le lien !\nhttp://localhost/activation.php?";
+			$message = "Salut ".$_POST['login']." !\nClique sur le lien !\nhttp://localhost/activation.php?login=".$_POST['login'];
 			mail($_POST['mail'], 'Validation du compte Camagru', $message);
 			?>
 			<script language="javascript">

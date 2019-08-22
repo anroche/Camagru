@@ -4,7 +4,7 @@
 
 __User__
 
-- [ ] Inscription: Email, Pseudo, Mot de Passe
+- [*] Inscription: Email, Pseudo, Mot de Passe
 - [ ] Confirmation du compte via email
 - [ ] Connexion: Email, Mot de Passe
 - [ ] Deconnexion en un seul click
