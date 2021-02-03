@@ -21,7 +21,7 @@ else
  	 	<tr><td>login</td><td><input type="text" name="login" value="login"></td></tr>
   		<tr><td>password</td><td><input type="password" name="password" value="password"></td></tr>
   		<tr><td><input type="submit" name="OK" value="OK"><td></tr>
-		</form> 
+		</form>
 	</table>
 <br>
 	<table  id="btn">
@@ -32,7 +32,7 @@ else
   		<tr><td>Mail</td><td><input type="mail" name="mail" value="mail"></td></tr>
   		<tr><td><input type="submit" name="OK" value="OK"><td></tr>
 
-		</form> 
+		</form>
 	</table>
 	<?php include "footer.php" ?>
 </body>
