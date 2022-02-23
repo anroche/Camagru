@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (empty($_SESSION['login'])) {
   header('Location: index.php');
 }
@@ -24,10 +23,8 @@ else
   		<tr><td>Password</td><td><input type="password" name="PW1" value="password"></td></tr>
   		<tr><td>Mail</td><td><input type="mail" name="mail" value="mail"></td></tr>
   		<tr><td><input type="submit" name="OK" value="OK"><td></tr>
-
-		</form> 
+		</form>
 	</table>
-
 	<?php include "footer.php" ?>
 </body>
 </html>

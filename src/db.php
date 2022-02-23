@@ -5,7 +5,7 @@
             $connexion = new PDO(
                 "mysql:host=db;dbname=camagru_anroche",
                 "root",
-				"test"
+				"pass"
             );
 			return $connexion;
 		} catch (Exception $err) {
@@ -26,7 +26,7 @@
 										`code_activation` VARCHAR(128),
 										PRIMARY KEY(id)
 										)");
-		$db->query("CREATE TABLE IF NOT EXISTS `image` ( 
+		$db->query("CREATE TABLE IF NOT EXISTS `image` (
 										`id` INT NOT NULL AUTO_INCREMENT,
 										`id_user` INT NOT NULL,
 										`login` VARCHAR(32) NOT NULL,
@@ -42,7 +42,7 @@
   										`cmmnt` text,
   										 PRIMARY KEY (`id`)
 										)");
-		
+
 	}
 	init()
 ?>
