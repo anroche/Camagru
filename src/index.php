@@ -15,7 +15,7 @@
    header('Location: home.php');
  }
  else
- 	include "header.php"
+ 	require "./Views/header.php"
  ?>
 	<table  id="btn">
 		<form action="connexion.php" method="post">
@@ -35,6 +35,6 @@
   		<tr><td><input type="submit" name="OK" value="OK"><td></tr>
 		</form>
 	</table>
-	<?php include "footer.php" ?>
+	<?php require "./Views/footer.php" ?>
 </body>
 </html>
