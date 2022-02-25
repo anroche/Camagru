@@ -1,7 +1,8 @@
 <?php
 session_start();
-require_once('./db.php');
-include "index.php";
+require_once('../db.php');
+// require index.php
+require('../index.php');
 
 $db = connect();
 
@@ -28,7 +29,7 @@ if (isset($_POST['login'], $_POST['PW1'], $_POST['mail'])){
 							':code_activation' => hash('whirlpool', $_POST['login'])));
 			echo $test;
 			$req->closeCursor();
-			$message = "Salut ".$_POST['login']." !\nClique sur le lien !\nhttp://localhost/activation.php?";
+			$message = "Salut ".$_POST['login']." !\nClique sur le lien !\n http://localhost/activation.php?";
 			mail($_POST['mail'], 'Validation du compte Camagru', $message);
 			?>
 			<script language="javascript">

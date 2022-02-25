@@ -1,12 +1,7 @@
-<?php
+<!-- <?php
 session_start();
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
-<div id="header">
+?> -->
+<div id="header" class="navbar">
 </br>
 	<a id="logo" href="home.php" title="APN"><img src="image/apn_logo.png" ></a>
 	<a id="logo" href="gallerie.php" title="gallerie"><img src="image/gallery.png" ></a>
@@ -15,4 +10,3 @@ session_start();
 	</br>
 	<pre><?php print_r($_SESSION['login']);?></pre>
 </div>
-</html>
